@@ -2,10 +2,23 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/register-upload', function () {
+    return view('upload');
+})->name('upload.view');
+
+Route::get('/file/{id}', function ($id) {
+    return view('file');
+})->name('file.view');
 
 Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
 
