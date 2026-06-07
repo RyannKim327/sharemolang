@@ -8,14 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class FileHandling extends Model
 {
+    /** @use HasFactory<\Database\Factories\FileHandlingFactory> */
     use HasFactory;
-
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'file_handling';
 
     /**
      * The attributes that are mass assignable.
@@ -24,11 +18,12 @@ class FileHandling extends Model
      */
     protected $fillable = [
         'file',
-        'private_url',
         'user_id',
+        'private_url',
         'public_url',
-        'expiration',
         'description',
+        'password',
+        'expiration',
     ];
 
     /**

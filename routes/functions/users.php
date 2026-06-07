@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/api/users/login', function (Request $request) {
     $data = $request->only([
-        'u', 'p',
+        'u', 'p','s'
     ]);
 
     /* $user = DB::table('user') */
@@ -17,8 +17,5 @@ Route::get('/api/users/login', function (Request $request) {
     /* }) */
     /* -> where('password', $password); */
 
-    return response()->json([
-        'user' => $_GET['u'],
-        'password' => $data['p'],
-    ]);
+    return response()->json($data);
 });

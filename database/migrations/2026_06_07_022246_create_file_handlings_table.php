@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('file_handling', function (Blueprint $table) {
+        Schema::create('file_handlings', function (Blueprint $table) {
             $table->id();
             $table->string('file');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('private_url');
-            $table->string('user_id');
             $table->string('public_url');
-            $table->string('expiration');
+            $table->text('description')->nullable();
+            $table->string('password')->nullable();
+            $table->dateTime('expiration')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('file_handling');
+        Schema::dropIfExists('file_handlings');
     }
 };
