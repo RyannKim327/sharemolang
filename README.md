@@ -6,6 +6,7 @@
 [![Vue Version](https://img.shields.io/badge/vue-%5E3.0-green.svg?style=flat-square)](https://vuejs.org)
 [![Tailwind Version](https://img.shields.io/badge/tailwind-%5E4.3-blueviolet.svg?style=flat-square)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
+[![wakatime](https://wakatime.com/badge/github/RyannKim327/Anesidora.svg)](https://wakatime.com/badge/github/RyannKim327/Anesidora)
 
 Anesidora is a secure, premium file-sharing and file hosting web application built with **Laravel** and **Vue.js**. Inspired by **Anesidora** (meaning "giver of gifts" in Greek mythology), this platform allows users to share files as "gifts" with secure links, passwords, and custom metadata.
 

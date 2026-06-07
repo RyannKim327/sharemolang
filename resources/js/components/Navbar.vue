@@ -1,12 +1,25 @@
+<script setup>
+import Icon from "./../assets/icon.png"
+import { ref, computed } from 'vue';
+
+// These would normally come from a store like Pinia or an API call
+const isAuthenticated = ref(false);
+const userName = ref('User');
+const userInitial = computed(() => userName.value.charAt(0).toUpperCase());
+
+const logout = () => {
+  console.log('Logout clicked');
+  // Implement logout logic
+};
+</script>
+
 <template>
   <nav class="bg-[#2c2c42] border-b border-[#3e3e5a] px-6 py-4 shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Logo -->
       <router-link :to="{ name: 'home' }" class="flex items-center space-x-3 group transition">
         <div class="bg-gradient-to-tr from-[#8b5cf6] to-[#c084fc] p-2 rounded-xl shadow-[0_0_15px_rgba(139,92,246,0.3)] group-hover:scale-105 transition-transform duration-300">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
-          </svg>
+          <img :src="Icon" class="w-10" />
         </div>
         <span class="text-xl font-bold tracking-tight text-[#e0e0e0] group-hover:text-white transition-colors duration-300">
           Anesidora
@@ -55,16 +68,3 @@
   </nav>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue';
-
-// These would normally come from a store like Pinia or an API call
-const isAuthenticated = ref(false);
-const userName = ref('User');
-const userInitial = computed(() => userName.value.charAt(0).toUpperCase());
-
-const logout = () => {
-  console.log('Logout clicked');
-  // Implement logout logic
-};
-</script>

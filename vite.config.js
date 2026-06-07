@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
+        tailwindcss(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
@@ -15,7 +16,6 @@ export default defineConfig({
                 }),
             ],
         }),
-        tailwindcss(),
         vue(),
     ],
     server: {
