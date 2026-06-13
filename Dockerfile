@@ -51,8 +51,9 @@ RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Prepare entrypoint
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+# COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+# RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 80
-CMD ["/usr/local/bin/entrypoint.sh"]
+CMD ["run.sh"]
+# CMD ["/usr/local/bin/entrypoint.sh"]
