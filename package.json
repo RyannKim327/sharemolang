@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "npm run build && php artisan serve"
+        "dev": "npm run build && php artisan serve",
+        "start": "nodemon --exec \"npm run dev\" --ext php,env"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^6.0.7",
@@ -16,6 +17,7 @@
         "vue-router": "^5.1.0"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.3.0"
+        "@tailwindcss/vite": "^4.3.0",
+        "nodemon": "^3.1.14"
     }
 }
