@@ -55,5 +55,5 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 # RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 80
-CMD ["run.sh"]
+CMD ["npm run dev"]
 # CMD ["/usr/local/bin/entrypoint.sh"]
