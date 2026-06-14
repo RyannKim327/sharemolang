@@ -1,13 +1,22 @@
 <div class="flex flex-row items-center w-full h-[calc(10%+1rem)] justify-between px-5 bg-[#0f172a] border-b-[#4c58a6] border-b-1">
-  <div class="flex flex-row items-center gap-5 h-full">
-    <span class="text-[1.25rem] text-[#3B82F6] font-extrabold">Anesidora</span>
-    <ul class="flex flex-row gap-2">
-      <li>Home</li>
-      <li>About</li>
-      <li>Public Files</li>
+  <div class="flex flex-row items-center gap-5 md:gap-10 h-full">
+    <span class="flex flex-row text-[1.25rem] text-[#3B82F6] font-extrabold">A<span class="hidden md:flex">nesidora</span></span>
+    <ul class="flex flex-row gap-3 md:gap-2">
+      <li onclick="location.href = '/'">
+        <span class="hidden md:flex">Home</span>
+        <i class="flex md:hidden! fa fa-regular fa-home"></i>
+      </li>
+      <li onclick="location.href = '/about'">
+        <span class="hidden md:flex">About</span>
+        <i class="flex md:hidden! fa-regular fa-info"></i>
+      </li>
+      <li onclick="location.href = 'files'">
+        <span class="hidden md:flex">Public Files</span>
+        <i class="flex md:hidden! fa fa-regular fa-folder-open"></i>
+      </li>
     </ul>
   </div>
-  <div class="flex flex-row gap-2 items-center h-full">
+  <div class="flex flex-row gap-5 md:gap-10 items-center h-full">
     <input placeholder="Search File" class="border-[#4c58a6] border rounded-full px-5 py-1" />
     @if (false)
       <div class="flex flex-row gap-2">

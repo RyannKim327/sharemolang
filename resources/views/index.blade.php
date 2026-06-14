@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="flex flex-col w-full">
-		<div class="flex flex-row px-10 items-center justify-between w-full min-h-[calc(90dvh)]">
-			<div class="flex flex-col w-[calc(50%-0.5rem)]">
-				<span class="text-[3rem]">Anesidora</span>
-				<span>Sending of Gifts at no cost</span>
+		<div class="flex flex-row px-10 items-center justify-between w-full min-h-[calc(90dvh-0.25rem)]">
+			<div class="flex flex-col w-full md:w-[calc(50%-0.5rem)] md:px-10 items-center md:items-left">
+				<span class="text-[5rem] text-[#3B82F6] font-extrabold w-full text-center md:text-left">Anesidora</span>
+				<span class="text-[1.5rem] w-full text-center md:text-left">Share More Than Files. Share Responsibilities.</span>
 			</div>
-			<div class="w-[calc(50%-0.5rem)]">
+			<div class="hidden md:flex w-[calc(50%-0.5rem)]">
 				<img src="assets/icon.png" alt="">
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 				container.classList.add(
 					'flex', 'flex-col', 'aspect-video',
 					'rounded', 'bg-[#0f172a]',
-					'w-[calc(25%-0.5em)]', 'p-2'
+					'w-[calc(50%-0.5rem)]', 'md:w-[calc(25%-0.5em)]', 'p-2'
 				)
 
 				title.textContent = file.name
