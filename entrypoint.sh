@@ -7,8 +7,8 @@ export DB_DATABASE=${DB_DATABASE:-/var/www/database/database.sqlite}
 
 # Create SQLite database if it doesn't exist
 if [ "$DB_CONNECTION" = "sqlite" ]; then
-    touch "$DB_DATABASE"
-    chown www-data:www-data "$DB_DATABASE"
+  touch "$DB_DATABASE"
+  chown www-data:www-data "$DB_DATABASE"
 fi
 
 # Ensure storage and bootstrap/cache are writable
@@ -17,10 +17,10 @@ chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Generate APP_KEY if not provided (this should be set in Render for production)
 if [ -z "$APP_KEY" ]; then
-    echo "APP_KEY is not set. Generating a temporary one..."
-    # We use a trick to set it for the current session without editing .env
-    # because we want it to be available for artisan commands below.
-    export APP_KEY=$(php artisan key:generate --show --no-interaction)
+  echo "APP_KEY is not set. Generating a temporary one..."
+  # We use a trick to set it for the current session without editing .env
+  # because we want it to be available for artisan commands below.
+  export APP_KEY=$(php artisan key:generate --show --no-interaction)
 fi
 
 # Run migrations

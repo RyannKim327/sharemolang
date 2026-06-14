@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Anesidora{{ View::hasSection('title') ? ' | ' . $__env->yieldContent('title') : '' }}</title>
-		<link rel="icon" href="assets/icon.png">
-		@fonts
-		@vite(['resources/css/app.css', 'resources/js/app.js'])
-	</head>
-    <body class="flex flex-col bg-[#1e293b] text-[#f8fafc] h-dvh w-dvw">
-	    <x-header name="kimmy" />
-	    <main class="h-full overflow-hidden overflow-y-auto scrollbar-none">
-	        <div class="min-h-screen p-5">
-	            @yield('content')
-	        </div>
-	        <x-footer />
-	    </main>
-	</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anesidora{{ View::hasSection('title') ? ' | ' . $__env->yieldContent('title') : '' }}</title>
+    <link rel="icon" href="assets/icon.png">
+    @fonts
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+  <body class="flex flex-col bg-[#1e293b] text-[#f8fafc] h-dvh w-dvw">
+    <x-header name="kimmy" />
+    <main class="h-full overflow-hidden overflow-y-auto scrollbar-none">
+      <div class="min-h-screen p-5">
+        @yield('content')
+      </div>
+      <x-footer />
+    </main>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="icon.png" />
+  <img src="icon.png" />
 </div>
 
 [![Laravel Version](https://img.shields.io/badge/laravel-%5E13.8-red.svg?style=flat-square)](https://laravel.com)

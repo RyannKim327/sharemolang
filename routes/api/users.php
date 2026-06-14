@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/api/users/login', function (Request $request) {
   $data = $request->only([
-    'u', 'p','s'
+  'u', 'p','s'
   ]);
 
   /* $user = DB::table('user') */
   /* -> where(function ($q) use $(query) { */
-  /*   $q->where( */
-  /*       'username', $usernae) */
-  /*     ->orwhere('email', $username) */
+  /*    $q->where( */
+  /*            'username', $usernae) */
+  /*        ->orwhere('email', $username) */
   /* }) */
   /* -> where('password', $password); */
 

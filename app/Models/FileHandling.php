@@ -8,29 +8,29 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class FileHandling extends Model
 {
-    /** @use HasFactory<\Database\Factories\FileHandlingFactory> */
-    use HasFactory;
+  /** @use HasFactory<\Database\Factories\FileHandlingFactory> */
+  use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'file',
-        'user_id',
-        'private_url',
-        'public_url',
-        'description',
-        'password',
-        'expiration',
-    ];
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array<int, string>
+   */
+  protected $fillable = [
+    'file',
+    'user_id',
+    'private_url',
+    'public_url',
+    'description',
+    'password',
+    'expiration',
+  ];
 
-    /**
-     * Get the user that owns the file.
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+  /**
+   * Get the user that owns the file.
+   */
+  public function user(): BelongsTo
+  {
+    return $this->belongsTo(User::class);
+  }
 }

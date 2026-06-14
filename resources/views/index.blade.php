@@ -1,82 +1,62 @@
 @extends('app')
 
 @section('content')
-	<div class="flex flex-col w-full">
-		<span class="text-[1.5rem]">Top Downloads</span>
-		<div id="file-lists" class="flex flex-row flex-wrap gap-2 w-full"></div>
+    <div class="flex flex-col w-full">
+		<div class="flex flex-row px-10 items-center justify-between w-full min-h-[calc(90dvh)]">
+			<div class="flex flex-col w-[calc(50%-0.5rem)]">
+				<span class="text-[3rem]">Anesidora</span>
+				<span>Sending of Gifts at no cost</span>
+			</div>
+			<div class="w-[calc(50%-0.5rem)]">
+				<img src="assets/icon.png" alt="">
+			</div>
+		</div>
+		<div class="flex flex-col gap-3 min-h-screen">
+			<span class="text-[1.5rem]">Top Downloads</span>
+			<div id="file-lists" class="flex flex-row flex-wrap gap-2 w-full"></div>
+		</div>
 	</div>
 
 	<script>
 		const main = document.getElementById("file-lists")
-		const files = [
-			{
-				id: 1,
-				name: "Sample File.png",
-				description: "Hello World",
-				expiration: 1780754837, // 2026-06-06
-				url: "google",
-				protected: false
-			},
-			{
-				id: 2,
-				name: "Project Proposal.pdf",
-				description: "Project proposal",
-				expiration: 1783346837, // 2026-07-06
-				url: "drive-link-1",
-				protected: true
-			},
-			{
-				id: 3,
-				name: "Marketing Banner.jpg",
-				description: "Marketing assets",
-				expiration: 1786025237, // 2026-08-06
-				url: "cdn-link-2",
-				protected: false
-			},
-			{
-				id: 4,
-				name: "Employee Handbook.docx",
-				description: "Internal documentation",
-				expiration: 1788703637, // 2026-09-06
-				url: "storage-link-3",
-				protected: true
-			},
-			{
-				id: 5,
-				name: "Financial Report.xlsx",
-				description: "Q3 financial report",
-				expiration: 1791295637, // 2026-10-06
-				url: "storage-link-4",
-				protected: false
-			},
-			{
-				id: 6,
-				name: "Presentation Slides.pptx",
-				description: "Company presentation",
-				expiration: 1793974037, // 2026-11-06
-				url: "drive-link-5",
-				protected: true
-			}
-		];
+		async function main_loader(){
+			const files = await fetch('/api/files/top').then((r) => { return r.json() })
+            console.log(files)
+			files.forEach(file => {
+				const container = document.createElement("div")
+				const head = document.createElement("div")
+				const icon = document.createElement("img")
+				const type = document.createElement("span")
+				const title = document.createElement("span")
+				const description = document.createElement("span")
 
-		files.map(file => {
-			const container = document.createElement("div")
-			const title = document.createElement("span")
-			const description = document.createElement("span")
+				head.classList.add(
+					'flex', 'flex-row', 'w-full'
+				)
 
-			container.classList.add(
-				'flex', 'flex-col',
-				'rounded', 'bg-[#0f172a]',
-				'w-[calc(25%-0.5em)]', 'p-2'
-			)
+				type.textContent = file.name.split(".")[file.name.split(".").length - 1]
+				type.classList.add(
+					'px-3', 'text-[0.75rem]', 'rounded-full',
+					'bg-[#283044]'
+				)
+				head.appendChild(type)
 
-			title.textContent = file.name
-			description.textContent = file.description
+				container.classList.add(
+					'flex', 'flex-col', 'aspect-video',
+					'rounded', 'bg-[#0f172a]',
+					'w-[calc(25%-0.5em)]', 'p-2'
+				)
 
-			container.appendChild(title)
-			container.appendChild(description)
+				title.textContent = file.name
+				description.textContent = file.description
 
-			main.appendChild(container)
-		})
+				container.appendChild(head)
+				container.appendChild(title)
+				container.appendChild(description)
+
+				main.appendChild(container)
+			})
+		}
+		main_loader()
 	</script>
 @endsection
